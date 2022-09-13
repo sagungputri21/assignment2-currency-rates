@@ -2,7 +2,7 @@ import './App.css';
 import DataTable from './components/Table/DataTable';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import TextInput from './components/TextInfo';
+import TextInfo from './components/TextInfo';
 
 const baseAPI = "https://api.currencyfreaks.com/latest?apikey=a4bed77c76ca46d189705a30c51c4e76&symbols=CAD,EUR,IDR,JPY,CHF,GBP&base=USD"
 
@@ -34,7 +34,7 @@ function App () {
         data={data}
         header={header}
       />
-      <TextInput/>
+      <TextInfo/>
     </div>
   );
 }

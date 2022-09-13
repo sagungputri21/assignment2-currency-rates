@@ -1,6 +1,6 @@
 import React from "react";
 
-const TextInput = () => {
+const TextInfo = () => {
     return (
         <div className="mt-12 text-center">
           <h3 className="text-md text-white">Rates are based from 1 USD</h3>
@@ -13,4 +13,4 @@ const TextInput = () => {
     )
 }
 
-export default TextInput;
+export default TextInfo;
