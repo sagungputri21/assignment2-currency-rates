@@ -5,16 +5,16 @@ const DataTable = ({
 }) => {
   return (
     <div
-      className={`rounded-md p-5 w-full text-white`}
+      className={`rounded-md p-5 w-full text-white flex justify-center text-center`}
     >
       <table
         className={`table-auto`}
       >
-        <thead className="md:border-b-2 border-brand-secondary">
+        <thead className="md:border-b-2">
           <tr>
             {header.map((column, index) => {
               return (
-                <th className="font-bold text-lg pb-2" key={index}>
+                <th className="font-bold text-lg pb-2 px-3" key={index}>
                   {column}
                 </th>
               );
@@ -22,18 +22,18 @@ const DataTable = ({
           </tr>
         </thead>
         <tbody>
-          {data.map((currency, index) => {
+          {data.rates && Object.keys(data.rates).map((currency, index) => {
             return (
-              <tr className="even:bg-brand-black-primary" key={index}>
-                  <td>{currency}</td>
-                  <td className="font-thin text-sm pb-3 pt-3.5">
-                      {`${data[currency] * 1.05}`}
+              <tr className="even:bg-brand-black-primary gap-5" key={index}>
+                  <td className="font-bold border-r border-b">{currency}</td>
+                  <td className="font-thin text-md py-3 px-5">
+                      {parseFloat(`${data.rates[currency] * 1.05}`)}
                   </td>
-                  <td>
-                    {data[currency]}
+                  <td className="font-thin text-md py-3 px-5">
+                    {parseFloat(data.rates[currency])}
                   </td>
-                  <td className="font-thin text-sm pb-3 pt-3.5">
-                      {`${data[currency] * 0.95}`}
+                  <td className="font-thin text-md py-3 px-5">
+                      {parseFloat(`${data.rates[currency] * 0.95}`)}
                   </td>
               </tr>
             );
